@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.2)
 set(CXX_STANDARD 14)
 
-project(DP_Example)
+project(GTest_Knowledge_Share)
 
 include(CTest)
 
