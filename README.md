@@ -1,24 +1,39 @@
-# DownloadProject
+# GTest Knowledge Share
 
+This knowledge sharing event will consist of three hands-on sessions, each with a duration of about one hour. It is aimed at people that never used GTest.
+To participate, you will need a C++14 compiler (gcc, clang or msvc are recommended) and CMake with a build system supported by CMake (make or nmake recommended).
 
-Platform | Build status
----------|-------------:
-Linux<br>Mac OSX | [![Build Status](https://travis-ci.org/Crascit/DownloadProject.svg?branch=master)](https://travis-ci.org/Crascit/DownloadProject)
-Windows (VS2015) | [![Build status](https://ci.appveyor.com/api/projects/status/1qdjq4fpef25tftw/branch/master?svg=true)](https://ci.appveyor.com/project/Crascit/downloadproject/branch/master)
+Pre-work: Clone this repository, then build and run gtest_session_1 and gtest_session_2.
 
-This repository contains a generalized implementation for downloading an
-external project's source at CMake's configure step rather than as part
-of the main build. The primary advantage of this is that the project's source
-code can then be included directly in the main CMake build using the
-add_subdirectory() command, making all of the external project's targets,
-etc. available without any further effort. The technique is fully explained
-in the article available at:
+## Session 1: Testing with GTest
 
-https://crascit.com/2015/07/25/cmake-gtest/
+In this session we will investigate the main features of GTest. The only previous knowledge required is basic C++14.
 
-An example as described in that article is provided here to demonstrate
-how to use the DownloadProject module. It uses [googletest][1] as the
-example, downloading and building trivial gtest and gmock test cases
-to show the technique.
+* Test suites and test cases
+    * Writing an empty test case
+    * EXPECTs and ASSERTs
+* Test fixtures
+    * Avoid repetition using a test fixture
+    * SetUp and TearDown
+    * Fixture hierarchy
+    * The diamond problem with fixtures
+* Parametrized tests
+    * Avoid repetition using test with parameters
+    * Using parametrized tests together with test fixtures
 
-[1]: https://github.com/google/googletest
+## Session 2: Mocking with GMock
+
+In this session we will learn to use GMock to write better tests. The only previous knowledge required is basic C++14 and basic GTest.
+
+* Test doubles
+    * Dependency injection
+* Gmock
+* Mock using virtual functions
+    * MOCK_METHOD and MOCK_METHODN
+    * Specifiers (const, override, final, etc)
+    * ON_CALL introduction
+* Mock using templates
+* Setting expectations
+    * Matchers
+    * Multiple expectations
+* Nice mock, strict mock and naggy mock
