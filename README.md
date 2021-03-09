@@ -37,3 +37,31 @@ In this session we will learn to use GMock to write better tests. The only previ
     * Matchers
     * Multiple expectations
 * Nice mock, strict mock and naggy mock
+
+## Pre-work
+
+To clone the repository, first you need the url. On Github, you can get it by clicking on this button called "Code", then copying the address.
+
+![git url](readme_images/git_url.png)
+
+### Using Clion
+
+Open Clion, then click on "Get from Version Control".
+
+![clion1](readme_images/clion1.png)
+
+Paste the git url you copied before, choose a directory for the project and click on "Clone"
+
+![clion2](readme_images/clion2.png)
+
+### Using the command line
+
+```
+mkdir GTestKnowlegdeShare
+cd GTestKnowlegdeShare
+git clone <git url> . # substitute the url you copied here
+cmake CMakeLists.txt -G "Visual Studio 16 2019"
+cmake --build .
+./session\ 1/Debug/gtest_session_1.exe # you should see an output with 0 tests
+./session\ 2/Debug/gtest_session_2.exe # you should see an output with 0 tests
+```
