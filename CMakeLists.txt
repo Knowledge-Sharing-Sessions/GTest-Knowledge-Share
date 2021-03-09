@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.2)
+set(CXX_STANDARD 14)
 
-project(DP_Example)
+project(GTest_Knowledge_Share)
 
 include(CTest)
 
@@ -36,3 +37,6 @@ endif()
 add_executable(example example.cpp)
 target_link_libraries(example gtest gmock_main)
 add_test(NAME example_test COMMAND example)
+
+add_subdirectory("session 1")
+add_subdirectory("session 2")

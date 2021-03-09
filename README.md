@@ -1,24 +1,69 @@
-# DownloadProject
+# GTest Knowledge Share
 
+This knowledge sharing event will consist of two hands-on sessions, each with a duration of about one hour. It is aimed at people that never used GTest.
+To participate, you will need git, a C++14 compiler (gcc, clang or msvc are recommended), CMake and a build system supported by CMake (make or nmake recommended).
 
-Platform | Build status
----------|-------------:
-Linux<br>Mac OSX | [![Build Status](https://travis-ci.org/Crascit/DownloadProject.svg?branch=master)](https://travis-ci.org/Crascit/DownloadProject)
-Windows (VS2015) | [![Build status](https://ci.appveyor.com/api/projects/status/1qdjq4fpef25tftw/branch/master?svg=true)](https://ci.appveyor.com/project/Crascit/downloadproject/branch/master)
+Pre-work: Clone this repository, then build and run gtest_session_1 and gtest_session_2. See how to do it below.
 
-This repository contains a generalized implementation for downloading an
-external project's source at CMake's configure step rather than as part
-of the main build. The primary advantage of this is that the project's source
-code can then be included directly in the main CMake build using the
-add_subdirectory() command, making all of the external project's targets,
-etc. available without any further effort. The technique is fully explained
-in the article available at:
+## Session 1: Testing with GTest
 
-https://crascit.com/2015/07/25/cmake-gtest/
+In this session we will investigate the main features of GTest. The only previous knowledge required is basic C++14.
 
-An example as described in that article is provided here to demonstrate
-how to use the DownloadProject module. It uses [googletest][1] as the
-example, downloading and building trivial gtest and gmock test cases
-to show the technique.
+* Test suites and test cases
+    * Writing an empty test case
+    * EXPECTs and ASSERTs
+* Test fixtures
+    * Avoid repetition using a test fixture
+    * SetUp and TearDown
+    * Fixture hierarchy
+    * The diamond problem with fixtures
+* Parametrized tests
+    * Avoid repetition using test with parameters
+    * Using parametrized tests together with test fixtures
 
-[1]: https://github.com/google/googletest
+## Session 2: Mocking with GMock
+
+In this session we will learn to use GMock to write better tests. The only previous knowledge required is basic C++14 and basic GTest.
+
+* Test doubles
+    * Dependency injection
+* Gmock
+* Mock using virtual functions
+    * MOCK_METHOD and MOCK_METHODN
+    * Specifiers (const, override, final, etc)
+    * ON_CALL introduction
+* Mock using templates
+* Setting expectations
+    * Matchers
+    * Multiple expectations
+* Nice mock, strict mock and naggy mock
+
+## Pre-work
+
+To clone the repository, first you need the url. On Github, you can get it by clicking on this button called "Code", then copying the address.
+
+![git url](readme_images/git_url.png)
+
+### Using Clion
+
+Open Clion, then click on "Get from Version Control".
+
+![clion1](readme_images/clion1.png)
+
+Paste the git url you copied before, choose a directory for the project and click on "Clone"
+
+![clion2](readme_images/clion2.png)
+
+Then build and run gtest_session_1 and gtest_session_2. You should see output with 0 tests.
+
+### Using the command line
+
+```
+mkdir GTestKnowlegdeShare
+cd GTestKnowlegdeShare
+git clone <git url> . # substitute the url you copied here
+cmake CMakeLists.txt -G "Visual Studio 16 2019"
+cmake --build .
+./session\ 1/Debug/gtest_session_1.exe # you should see an output with 0 tests
+./session\ 2/Debug/gtest_session_2.exe # you should see an output with 0 tests
+```
