@@ -1,9 +1,9 @@
 # GTest Knowledge Share
 
-This knowledge sharing event will consist of three hands-on sessions, each with a duration of about one hour. It is aimed at people that never used GTest.
-To participate, you will need a C++14 compiler (gcc, clang or msvc are recommended) and CMake with a build system supported by CMake (make or nmake recommended).
+This knowledge sharing event will consist of two hands-on sessions, each with a duration of about one hour. It is aimed at people that never used GTest.
+To participate, you will need git, a C++14 compiler (gcc, clang or msvc are recommended), CMake and a build system supported by CMake (make or nmake recommended).
 
-Pre-work: Clone this repository, then build and run gtest_session_1 and gtest_session_2.
+Pre-work: Clone this repository, then build and run gtest_session_1 and gtest_session_2. See how to do it below.
 
 ## Session 1: Testing with GTest
 
@@ -53,6 +53,8 @@ Open Clion, then click on "Get from Version Control".
 Paste the git url you copied before, choose a directory for the project and click on "Clone"
 
 ![clion2](readme_images/clion2.png)
+
+Then build and run gtest_session_1 and gtest_session_2. You should see output with 0 tests.
 
 ### Using the command line
 
