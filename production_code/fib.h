@@ -28,15 +28,6 @@ constexpr long long unsigned recursive_fib(unsigned n) {
            recursive_fib(n-1) + recursive_fib(n-2);
 }
 
-constexpr long long unsigned closed_fib(unsigned n) {
-    constexpr static auto sqrt5 = square_root(5.0l, 4*std::numeric_limits<long double>::epsilon());
-    constexpr static auto phi = (1 + sqrt5)/2;
-    constexpr static auto phi2 = -1/phi;
-    auto a = power(phi, n);
-    auto b = power(phi2, n);
-    return nearest_integer((a - b)/sqrt5);
-}
-
 class Fib {
 public:
     Fib(long long starting_value_0, long long starting_value_1) {
